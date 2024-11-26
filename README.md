@@ -46,11 +46,11 @@ See below image:
 
 **3: Pushing the code to Github repository**
 
-So far I’ve been able to allow Git to track and monitor all the project work done locally on my system but that's is not enough, I need to create a github repository online naming it *MarketPeak_Ecommerce* and push from my local remote to the GitHub remote created online should incase my system brakes down or crashed, I can always go to the online repository created to recover my projects.
+So far, I’ve been able to allow Git to track and monitor all the project work done locally on my system but that's is not enough, I need to create a github repository online naming it *MarketPeak_Ecommerce* and push from my local remote to the GitHub remote created online should incase my system brakes down or crashed, I can always go to the online repository created to recover my projects.
 
 **3.i: Creating a Remote Repository on GitHub:**
 
-The below images show how i created my git repository named *MarketPeak_Ecommerce*
+The below images shows how i created my git repository named *MarketPeak_Ecommerce*
 
 ![alt text](images/Creating-newrepo-on-github-MarketPeak_Ecommerce.png)
 
@@ -104,6 +104,7 @@ Navigate to my image icon On my github account, Clicked on sttings, then click o
 `git clone git@github.com:bolajidevops/MarketPeak_Ecommerce.git`
 
 ![alt text](images/Cloning-git-EC2Linux-terminal.png)
+
 
 
 
