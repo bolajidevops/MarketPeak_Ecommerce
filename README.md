@@ -17,9 +17,9 @@ Initialize a Git Repository: Creating the project directory and name it "*Market
 
 See image below:
 
-`mkdir MarketPeak_Ecommerce`
-`cd MarketPeak_Ecommerce`
-`git init`
+- `mkdir MarketPeak_Ecommerce`
+- `cd MarketPeak_Ecommerce`
+- `git init`
 
 ![alt text](images/Mkdir-CD-gitadd-init-Directory.png)
 
@@ -39,8 +39,8 @@ The Zipped file was downloaded on my Local PC and i was able to unzip it on my M
 
 See below image:
 
-`git add .`
-`git commit -m "Code files for Marketpeak"`
+- `git add .`
+- `git commit -m "Code files for Marketpeak"`
 
 ![alt text](images/Git-Commit.png)
 
@@ -104,6 +104,121 @@ Navigate to my image icon On my github account, Clicked on sttings, then click o
 `git clone git@github.com:bolajidevops/MarketPeak_Ecommerce.git`
 
 ![alt text](images/Cloning-git-EC2Linux-terminal.png)
+
+
+**Task 3: Installing Web Server on Linux EC2**
+
+An Apache HTTP Server (httpd) is a widely used web server that serves HTML files and content over the internet. Installing it on Linux EC2 server allows me to host MarketPeak E-commerce site:
+
+**3.i. Install Apache web server on the EC2 instance:** Note that httpd is the software name for Apache on redhats systems using yum package manager
+
+The following commands will be use to intall Apache
+
+- sudo yum update -y
+- sudo yum install httpd -y
+- sudo systemctl start httpd
+- sudo systemctl enable httpd
+
+![alt text](images/Webserver-installation-EC2.png)
+
+The above commands updates the linux server and then installs the httd (Apache), start the web server, and ensures it automztically start on server boot.
+
+**3.ii. Configure httpd for Website:**
+
+* **Prepare the Web Directory:** I Cleared the default httpd web directory and copy MarketPeak Ecommerce website files to it.
+
+- sudo rm -rf /var/www/html/*  # Delete the default web directory
+- sudo cp -r ~/MarketPeak_Ecommerce/2137_barista_cafe/* /var/www/html/ # copy the content of MarketPeak_Ecommerce cloned earlier
+
+* Reload httpd: Apply the changes by reloading the httpd service.
+
+* `sudo systemctl reload httpd`
+
+**Task 4:** Accessing the Website from Browser With httpd configured and website files in place, MarketPeak Ecommerce platform is now live on the internet: By Opening a web browser and accessing the public IP (http://34.222.93.147/) of my EC2 instance to view the deployed website.
+
+![alt text](images/Public:IP-Website-Access.png)
+
+
+## Step3: Continuous Integration and Deployment Workflow
+
+To ensure a smooth workflow for developing, testing, and deploying my e-commerce platform, The below structure will be implemented which covers making changes in a development environment, utilizing version control with Git, and deploying updates to your production server on AWS.
+
+**Task 1:** Developing New Features and Fixes
+
+* 1.i. Create a Development Branch: By creating a different branch called developement, This isolates new features and bug fixes from the original version of your website.
+
+* `git branch development`
+* `git checkout development`
+
+![alt text](images/Git-NewBranch-Created&Switched.png)
+
+1.ii. Changes implemented: On the new branch (development), a new image was added to file (templates) to give a different background of the site.
+
+**Task 2:** Version control with Git
+
+The following commands were run to to stage, commit, and push to the branch (development):
+
+* `git add .`
+* `git commit -m "New Slide Added"`
+* `git push origin development`
+
+![alt text](images/git:add:commit:push-develop.png)
+
+**Task 3:** Pull Requests and Merging to the Main branch
+
+3.i. Creating a Pull Request: On the GitHub repo, i created a pull request to merge the branch (development) into the branch (main). This process is needed for code reviews and maintaining code qualities.
+
+3.ii. Review and Merge the Pull request: Review the changes for any possible errors and if there is none, merge the pull request into the main branch, this will add the new features (image) into the pjoect codebase.
+
+![alt text](images/Creating:PR&Merge.png)
+
+* `git checkout main`
+* `git merge development`
+
+![alt text](images/gitcheckout-main-gitmerge-develop.png)
+
+3.iii. Pushing the Merged Changes to GitHub: Ensuring that my local main branch has the new updates, is pushed to the remote repository on GitHub.
+
+* `git pull`
+* `git push origin main`
+
+![alt text](images/git-pull-git-push.png)
+
+
+**Task 4:** Deploying Updates to the Production Server
+
+4.i. Pulling the Latest Changes on the Server: By SSH into my AWS EC2 instance where the production website is hosted. I Navigate to the website's directory by CD'n into (MarketPeak_Ecommerce) and pull the latest changes from the main branch.
+
+* `git pull origin main`
+
+![alt text](images/EC2:Linux-git-pull.png)
+
+4.ii Restart the Web Server: The Web server may need to be restarted to apply the changes.
+
+* `sudo rm -rf /var/www/html/*`
+* `sudo cp -r ~/MarketPeak_Ecommerce/2137_barista_cafe/* /var/www/html/`
+
+* `sudo systemctl reload httpd`
+
+
+**Task 5: Testing the New Changes**
+
+* 5.i Access the Website: Opening the web browser and navigating to the public IP address of my EC2 instance. Testing to confirm the new features (image) added to ensure they work in a real life world.
+
+[Public Address](http://34.222.93.147/)
+
+
+
+This workflow emphasizes best practices in software development and deployment, including branch management, code review through pull requests, and continuous integration/deployment strategies. By following these steps, you maintain a stable and up-to-date production environment for your e-commerce platform.
+
+
+
+
+
+
+
+
+
 
 
 
