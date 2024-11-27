@@ -24,6 +24,7 @@ See image below:
 ![alt text](images/Mkdir-CD-gitadd-init-Directory.png)
 
 **1.i. Get Source code from template.com:**
+
 1.ii. Obtain and Prepare the E-Commerce Website Template: As a devops engineer i don't need to write website codes, This is the work of a software developer and all i have to do is to dowload the existing E-commerce website template.
 
 **1.iii. Downloading a Website Template:** Visit [Tooplate](https://www.tooplate.com) to download any suitable E-Commerce website template, you can also use other sites to do so.
@@ -55,12 +56,14 @@ The below images shows how i created my git repository named *MarketPeak_Ecommer
 ![alt text](images/Creating-newrepo-on-github-MarketPeak_Ecommerce.png)
 
 **3.ii. Linking my Local Repository to GitHub:** Navigated to the project directory (MarketPeak_Ecommerce)in my VS terminal and added the remote repository URL to my local repository configuration.
-`git remote add origin https://github.com/bolajidevops/MarketPeak_Ecommerce.git`
+
+* `git remote add origin https://github.com/bolajidevops/MarketPeak_Ecommerce.git`
 
 ![alt text](images/Link-local-github&pushing-all-files.png)
 
 **3.iii. Pushing my code to GitHub repository:** The command below is used to carry out this task.
-`git push -u origin main`
+
+* `git push -u origin main`
 
 ![alt text](images/Link-local-github&pushing-all-files.png)
 
@@ -89,7 +92,7 @@ I need to clone the GitHub repository to my AWS EC2 instance Before deploying my
 
 **2.ii Cat and copy the public key**
 
-`cat /home/ec2-user/.ssh/id_rsa.pub`
+* `cat /home/ec2-user/.ssh/id_rsa.pub`
 
 **2.iii. Adding SSH Public key to GitHub repository:**
 
@@ -99,9 +102,9 @@ Navigate to my image icon On my github account, Clicked on sttings, then click o
 
 **Note:** This is a AWS Linux server by default git is not installed, so i have to run the command below to install git
 
-`sudo yum install git -y`
+- `sudo yum install git -y`
 
-`git clone git@github.com:bolajidevops/MarketPeak_Ecommerce.git`
+- `git clone git@github.com:bolajidevops/MarketPeak_Ecommerce.git`
 
 ![alt text](images/Cloning-git-EC2Linux-terminal.png)
 
