@@ -207,9 +207,10 @@ The following commands were run to to stage, commit, and push to the branch (dev
 
 [Public Address](http://34.222.93.147/)
 
+![alt text](images/New-slide.image.png)
 
 
-This workflow emphasizes best practices in software development and deployment, including branch management, code review through pull requests, and continuous integration/deployment strategies. By following these steps, you maintain a stable and up-to-date production environment for your e-commerce platform.
+This workflow emphasizes best practices in software development and deployment as well as branch managements, code review through pull requests, and continuous integration/deployment strategies. By following these steps, you maintain a stable and up-to-date production environment for e-commerce platform.
 
 
 
