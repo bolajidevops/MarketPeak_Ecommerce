@@ -96,7 +96,7 @@ I need to clone the GitHub repository to my AWS EC2 instance Before deploying my
 
 **2.iii. Adding SSH Public key to GitHub repository:**
 
-Navigate to my image icon On my github account, Clicked on sttings, then click on SSH and GPGKeys.
+Navigate to my image icon On my github account, Clicked on settings, then click on SSH and GPGKeys.
 
 ![alt text](images/Adding-Keygen-Github.png)
 
